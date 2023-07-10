@@ -12,6 +12,7 @@ public:
     //         }
     //     }
     // return {};
+    /////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     // using hashmap
     // unordered_map<int,int> numMap;
     // for(int i=0;i<nums.size();i++){
