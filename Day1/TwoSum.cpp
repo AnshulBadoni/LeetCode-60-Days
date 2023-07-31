@@ -12,8 +12,8 @@ public:
     //         }
     //     }
     // return {};
-    /////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-    // using hashmap
+    /////////////////////////////using hashmap\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
     // unordered_map<int,int> numMap;
     // for(int i=0;i<nums.size();i++){
     //     int x = target-nums[i];
