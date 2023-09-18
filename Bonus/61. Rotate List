@@ -1,0 +1,59 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+    
+    vector<int> arr;
+    int length = 0;
+
+public:
+    void convert(ListNode* dummy){
+        if(dummy!=nullptr){
+            arr.push_back(dummy->val);
+            convert(dummy->next);
+        }
+    }
+
+    void getLength(ListNode* head){
+        if(head!=nullptr){
+            length++;
+            getLength(head->next);
+        }
+    }
+
+    ListNode* rotateRight(ListNode* head, int k) {
+
+        if(head==nullptr || head->next==nullptr) return head;
+        ListNode* dummy = head;
+        getLength(dummy);
+        int rotate = k;
+        if(k>=length) rotate = k%length;
+        dummy = head;
+        convert(dummy);
+        int n = 1;
+        while(rotate){
+            int last = arr[arr.size()-1];
+            for(int i=arr.size()-1;i>0;i--){
+                arr[i] = arr[i-1];
+            }
+            arr[0] = last;
+            rotate--;
+        }
+
+        dummy = head;
+        int i = 0;
+        while(dummy!=nullptr){
+            dummy->val = arr[i];
+            dummy = dummy->next;
+            i++;
+        }
+        return head;
+    }
+};
